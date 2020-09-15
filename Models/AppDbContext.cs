@@ -8,23 +8,15 @@ namespace ProductWebAPI.Models
 {
     public class AppDbContext : DbContext
     {
-        internal object products;
-
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        // AppDbContext is a representation of your db
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
         {
 
         }
-        //DbSet is a representation of your Db
-        public DbSet<Product> product {get; set;}
 
-        internal class _db
-        {
-            internal static object products;
+        // DbSet is a representation of the table in your db
+        public DbSet<Product> products { get; set; }
 
-            internal static void SaveChanges()
-            {
-                throw new NotImplementedException();
-            }
-        }
     }
 }
